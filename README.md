@@ -1,56 +1,41 @@
-# FamilyLine MVP (Agent 代际养娃)
+# SnackTruck Agent Game (简化版)
 
-本项目包含：
-- `backend-go/`: Go 后端 API（本地端口 `8080`）
-- `backend-go/cloudflare/`: Cloudflare 代理部署模板
-- `frontend/`: Next.js 观测前端（本地端口 `3000`）
-- `backend-worker/`: 旧版 Worker 实现（可不使用）
+在原项目基础上重写成一个更简单、适合 Agent 的小游戏：餐车经营。
 
-## 1. 本地运行
+## 循环
+进货 -> 烹饪 -> 售卖 -> next-turn
 
-### 启动 Go 后端
+## 限制
+- 每回合最多 2 步
+- 动作冷却 1 秒
+
+## 本地运行
+
+### 后端
 ```bash
 cd backend-go
 go run .
 ```
 
-### 启动前端
-新开一个终端：
+### 前端
 ```bash
 cd frontend
-cp .env.example .env.local
 npm install
 npm run dev
 ```
 
-浏览器访问：`http://localhost:3000`
+打开 http://localhost:3000
 
-## 2. MVP API
-- `POST /api/family/register`
-- `GET /api/family/{id}/status`
-- `POST /api/family/{id}/action`
-- `POST /api/family/{id}/next-turn`
-- `POST /api/family/{id}/next-generation`
-- `GET /api/family/{id}/history`
+## 主要页面
+- `/` 首页
+- `/game/{id}` 游戏控制台
+- `/skill` Agent 说明
+
+## 主要 API
+- `POST /api/game/register`
+- `GET /api/game/{id}/status`
+- `POST /api/game/{id}/action`
+- `POST /api/game/{id}/next-turn`
+- `GET /api/game/{id}/history`
+- `GET /api/game/config`
 - `GET /api/leaderboard`
-- `GET /api/health`
-
-## 3. action_type
-- `study`
-- `exercise`
-- `rest`
-- `talk`
-- `class`
-- `discipline`
-
-## 4. Cloudflare 部署
-见：`backend-go/cloudflare/README.md`
-
-推荐结构：
-1. Go 容器服务对外暴露 API
-2. Cloudflare Worker 作为 API 代理与统一域名
-3. Vercel 前端用 Worker URL 作为 `NEXT_PUBLIC_API_BASE`
-
-## 5. 注意事项
-- 当前后端使用内存存储，重启会清空数据。
-- 下一步建议接入 PostgreSQL 或 D1 做持久化。

@@ -52,3 +52,156 @@ input {
 .log-item { padding: 10px 0; border-bottom: 1px dashed #e5d8c0; }
 .log-item:last-child { border-bottom: 0; }
 .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #ece2d1; font-size: 12px; }
+.clerk-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  background: linear-gradient(180deg, #fffdf7 0%, #f3ead7 100%);
+}
+.clerk {
+  width: 84px;
+  min-width: 84px;
+  height: 96px;
+  border-radius: 12px;
+  border: 1px solid #88724d;
+  background: #efe0c2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.clerk-head {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #fff6e7;
+  border: 2px solid #5f5138;
+  position: relative;
+}
+.clerk-body {
+  margin-top: 6px;
+  width: 30px;
+  height: 24px;
+  border-radius: 8px;
+  border: 2px solid #5a7b54;
+  background: #8db384;
+}
+.clerk .eye {
+  position: absolute;
+  top: 14px;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #3a2f23;
+}
+.clerk .eye.left { left: 10px; }
+.clerk .eye.right { right: 10px; }
+.clerk .mouth {
+  position: absolute;
+  left: 50%;
+  top: 25px;
+  transform: translateX(-50%);
+  width: 13px;
+  height: 5px;
+  border-bottom: 2px solid #3a2f23;
+  border-radius: 0 0 8px 8px;
+}
+.clerk.warn .mouth,
+.clerk.tired .mouth {
+  border-bottom: 0;
+  border-top: 2px solid #3a2f23;
+  top: 28px;
+}
+.clerk.tired .eye {
+  width: 7px;
+  height: 2px;
+  top: 15px;
+}
+.clerk.good {
+  background: #d9f0d2;
+  border-color: #6f9f5e;
+}
+.mascot-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: linear-gradient(180deg, #fffdf8 0%, #f5eddd 100%);
+}
+.mascot {
+  width: 96px;
+  min-width: 96px;
+  height: 108px;
+  border-radius: 12px;
+  background: #d5e9c4;
+  border: 1px solid #8ca376;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.mascot-head {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #fff6e2;
+  border: 2px solid #6f613f;
+  position: relative;
+}
+.mascot-body {
+  margin-top: 6px;
+  width: 34px;
+  height: 28px;
+  border-radius: 8px;
+  border: 2px solid #5d7f49;
+  background: #9dc57d;
+}
+.mascot .eye {
+  position: absolute;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #3b3021;
+}
+.mascot .eye.left { left: 12px; }
+.mascot .eye.right { right: 12px; }
+.mascot .mouth {
+  position: absolute;
+  left: 50%;
+  top: 29px;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 6px;
+  border-bottom: 2px solid #3b3021;
+  border-radius: 0 0 10px 10px;
+}
+.mascot.happy .mouth {
+  border-bottom-width: 3px;
+}
+.mascot.tired .eye {
+  height: 2px;
+  top: 18px;
+}
+.mascot.tired .mouth {
+  width: 12px;
+  border-bottom: 0;
+  border-top: 2px solid #3b3021;
+  top: 32px;
+}
+.mascot.stressed .eye {
+  width: 8px;
+  height: 2px;
+  top: 18px;
+}
+.mascot.stressed .mouth {
+  width: 14px;
+  border-bottom: 0;
+  border-top: 2px solid #3b3021;
+  top: 33px;
+}
+.mascot.focused .mouth {
+  width: 8px;
+  border-radius: 0;
+}
