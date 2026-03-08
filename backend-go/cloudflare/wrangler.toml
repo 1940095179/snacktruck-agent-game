@@ -1,0 +1,8 @@
+name = "familyline-go-api-proxy"
+main = "worker-proxy.mjs"
+compatibility_date = "2026-03-08"
+workers_dev = true
+
+[vars]
+# 这里填你的 Go 服务公网地址（例如 Cloudflare Containers 分配的 URL）
+ORIGIN_URL = "https://your-go-api.example.com"
